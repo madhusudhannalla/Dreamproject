@@ -1,0 +1,19 @@
+{
+	"bookName": "wwe",
+	"storyList": [{
+			"storyName": "rko"
+		},
+		{
+			"storyName": "cena"
+		},
+		{
+			"storyName": "brockt"
+		}
+	]
+}
+
+
+
+1)create one response class which columns u want and provide the param and non param constructors
+2)go to controller and create a method which will call the repo having the relationship
+3)write the query as per parameterized constructor 
