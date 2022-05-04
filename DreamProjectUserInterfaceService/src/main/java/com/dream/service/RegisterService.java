@@ -1,6 +1,5 @@
 package com.dream.service;
 
-import org.apache.logging.log4j.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -11,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.dream.beans.CustomerRegistration;
 import com.dream.beans.CustomerSignIn;
+import com.dream.dto.CustomerLoginDTO;
 
 @Service
 public class RegisterService {
@@ -32,12 +32,12 @@ public class RegisterService {
 	         }
 
 
-			public ResponseEntity<String> getLogin(String mail, String password) {
+			public ResponseEntity<CustomerLoginDTO> getLogin(String mail, String password) {
                         CustomerSignIn customerSignIn=new CustomerSignIn();
                         customerSignIn.setMail(mail);
                         customerSignIn.setPassword(password);
                         HttpEntity<CustomerSignIn> entityRequest=new HttpEntity<>(customerSignIn);
-				      ResponseEntity<String> login = restTemplate.exchange("http://localhost:8082/login",HttpMethod.POST, entityRequest,String.class);
+				      ResponseEntity<CustomerLoginDTO> login = restTemplate.exchange("http://localhost:8082/login",HttpMethod.POST, entityRequest,CustomerLoginDTO.class);
 			          return login;
 			}
 	
