@@ -13,6 +13,6 @@ import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuer
 
 import com.dream.beans.CustomerPersonalDetails;
 
-public interface CustomerPersonalDetailsRepo extends JpaRepository<CustomerPersonalDetails, String> {
+public interface CustomerPersonalDetailsRepo extends JpaRepository<CustomerPersonalDetails, Integer> {
 
 }
